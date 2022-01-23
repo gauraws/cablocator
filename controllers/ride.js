@@ -103,3 +103,17 @@ export const trackRide = asyncHandler(async (req, res) => {
 
   res.status(200).json({ data: confirmedBooking });
 });
+
+// @desc    Get logged In user rides
+// @route   GET /api/rides/myrides
+// @access  Private
+export const getMyRides = asyncHandler(async (req, res) => {
+  const rides = await Ride.find({ user: req.user._id });
+
+  if (rides) {
+    res.json({ data: rides });
+  } else {
+    res.status(404);
+    throw new Error('Rides not found for user id %s', req.user._id);
+  }
+});

@@ -2,6 +2,9 @@ import Cab from '../models/Cab.js';
 import asyncHandler from 'express-async-handler';
 import geoCoder from '../utils/geocoder.js';
 
+// @desc    Get all cabs at given address
+// @route   GET /api/cabs/search?address=<enter address>
+// @access  Private
 export const getAllCabs = asyncHandler(async (req, res) => {
   const { address } = req.query;
 
