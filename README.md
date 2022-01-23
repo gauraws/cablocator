@@ -25,7 +25,7 @@ npm install
 ### Run
 
 ```
-# Run server (:8080)
+# Run server (:5000)
 npm start
 ```
 
