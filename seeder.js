@@ -32,7 +32,7 @@ const destroyData = async () => {
     // await Product.deleteMany();
     await Order.deleteMany();
 
-    console.log('Data deleted'.red.inverse);
+    console.log('Data deleted');
     process.exit();
   } catch (error) {
     console.log(error);

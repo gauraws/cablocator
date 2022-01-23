@@ -17,7 +17,15 @@ const rideSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ['Micro', 'Mini', 'Auto', 'Bike', 'Prime Sedan', 'Prime SUV'],
+      enum: [
+        'micro',
+        'mini',
+        'auto',
+        'bike',
+        'prime_sedan',
+        'prime_suv',
+        'prime_play'
+      ],
       required: true
     },
     dropLat: {
@@ -43,7 +51,24 @@ const rideSchema = new mongoose.Schema(
       required: true,
       default: 0.0
     },
-    paidAt: {
+    bookingId: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    bookingDetails: {
+      cabType: { type: String },
+      cabNumber: { type: String },
+      cabModel: { type: String },
+      driverName: { type: String },
+      driverNumber: { type: String }
+    },
+    isBooked: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    bookedAt: {
       type: Date
     }
   },
