@@ -61,7 +61,7 @@ Here since cabs location is fixed, logic is implemented to find cab which are wi
  
 2. Rides API
 ```
-GET /api/rides/create
+POST /api/rides/create
 GET /api/rides/track/:bookingId
 GET /api/rides/myrides
 ```
