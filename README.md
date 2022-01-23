@@ -12,7 +12,7 @@ Create a .env file in then root and add the following
 
 ```
 NODE_ENV = development
-PORT = 8080
+PORT = 5000
 MONGO_URI = your mongodb uri
 ```
 
