@@ -44,14 +44,14 @@ node seeder.js -d
 ### Backend API's
 
 There are three types of resources Users, Cabs, Rides. Each one has defined Modal in *models* folder using mongoose schema. Users can register and login using name, email, password.
-Registered Users can create booking *rides* api. Once booking is create, it will not be confirmed until there is some cabs available for ride. System need to poll 
+Registered Users can create booking using *rides* api. Once booking is create, it will not be confirmed until there is some cabs available for ride. System need to poll 
 ```/api/rides/track/:bookingId``` to check if there are some cabs available nearby. 
 
 Generally cabs are always moving, so there location data keeps changing every few seconds. There should some driver system that should keep updating the location data of all the 
 cabs in some database. Here server uses some mock cabs data present in *data/cab.js*, these data have fixed location parameters like latitude and longitude which are compared with
 user's location parameters(lat and lng) to match user with the available cabs. 
 
-Here since cabs location is fixed, logic is implemented to find cab which are within 2 miles radius of users booking lat and lng parameters.
+Here since the cabs location is fixed, logic is implemented to find cab which are within 2 miles radius of users booking latitude and longitude parameters.
 
 1. Users and Auth API
  ```
